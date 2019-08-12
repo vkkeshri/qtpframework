@@ -1,0 +1,265 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE Report
+[
+<!ELEMENT Report (General ,(Doc|BPT)) >
+<!ATTLIST Report ver CDATA #REQUIRED tmZone CDATA #REQUIRED>
+
+<!ELEMENT General ( DocLocation ) >
+<!ATTLIST General productName CDATA #REQUIRED productVer CDATA #REQUIRED os CDATA #REQUIRED host CDATA #REQUIRED>
+
+<!ELEMENT BPT (DName,Res,DVer?,TSet?,TInst?,NodeArgs,Doc*) >
+<!ATTLIST BPT rID ID #REQUIRED >
+
+<!ELEMENT Doc (DName,Res,DVer?,TSet?,TInst?,RunType?,DT?,Step*,DIter*,Action*,Summary?,NodeArgs?) >
+<!ATTLIST Doc rID ID #REQUIRED type (Test|BC) "Test" productName CDATA #REQUIRED BCIter CDATA #IMPLIED >
+
+<!ELEMENT RunType ( #PCDATA )>
+<!ATTLIST RunType fmStep (False|True) "False" batch (False|True) "False" upDesc (False|True) "False" upChk (False|True) "False" upAS (False|True) "False">
+
+<!ELEMENT DName ( #PCDATA ) >
+
+<!ELEMENT Res ( #PCDATA ) >
+
+<!ELEMENT DVer ( #PCDATA ) >
+
+<!ELEMENT TSet ( #PCDATA ) >
+
+<!ELEMENT TInst ( #PCDATA ) >
+
+<!ELEMENT DIter (Step?,Action+,Summary?,NodeArgs)>
+<!ATTLIST DIter rID ID #REQUIRED iterID CDATA #REQUIRED>
+
+<!ELEMENT DocLocation ( #PCDATA )>
+
+<!ELEMENT Action (AName,AIter*,(Step|HtmlStep|Action)*,Summary,NodeArgs) >
+<!ATTLIST Action rID ID #REQUIRED>
+
+<!ELEMENT AIter ((Step|HtmlStep|Action)*,Summary?,NodeArgs) >
+<!ATTLIST AIter rID ID #REQUIRED iterID CDATA #REQUIRED>
+
+<!ELEMENT AName ( #PCDATA ) >
+
+<!ELEMENT Step (Obj,Details,Time,(Step|HtmlStep|Doc)*,NodeArgs) >
+<!ATTLIST Step rID ID #REQUIRED retval CDATA #IMPLIED>
+
+<!ELEMENT HtmlStep (HTML,(Step|HtmlStep|Doc)*,NodeArgs) >
+<!ATTLIST HtmlStep rID ID #REQUIRED >
+
+<!ELEMENT Obj ( #PCDATA ) >
+<!ATTLIST Obj plainTxt (False|True) "True">
+
+<!ELEMENT Details ( #PCDATA ) >
+<!ATTLIST Details plainTxt (False|True) "True">
+
+<!ELEMENT Time ( #PCDATA ) >
+
+<!ELEMENT HTML ( #PCDATA ) >
+
+<!ELEMENT Disp ( #PCDATA ) >
+
+<!ELEMENT NodeArgs (Disp,TopPane?,BtmPane?)>
+<!ATTLIST NodeArgs eType CDATA #REQUIRED icon CDATA #REQUIRED nRep CDATA #REQUIRED filter (False|True) "True">
+<!ATTLIST NodeArgs status (Passed|Failed|Done|Warning|Information) "Done">
+<!ATTLIST NodeArgs iconSel CDATA #IMPLIED nType CDATA #IMPLIED >
+
+<!ELEMENT TopPane (Path)>
+
+<!ELEMENT BtmPane ( (Path|WR)?,ASHilite?)>
+<!ATTLIST BtmPane vType CDATA "HTML">
+
+<!ELEMENT Path ( #PCDATA ) >
+
+<!ELEMENT ASHilite ( #PCDATA ) >
+
+<!ELEMENT WR ( #PCDATA ) >
+
+<!ELEMENT DT (NodeArgs) >
+<!ATTLIST DT rID ID #REQUIRED>
+
+<!ELEMENT Summary (Param*)>
+<!ATTLIST Summary sTime CDATA #IMPLIED eTime CDATA #IMPLIED passed CDATA #IMPLIED failed CDATA #IMPLIED warnings CDATA #IMPLIED retval CDATA #IMPLIED stopped (False|True) "False" >
+
+<!ELEMENT Param (ParamName,ParamVal)+ >
+<!ATTLIST Param paramInOut (In|Out) "In">
+
+<!ELEMENT ParamName ( #PCDATA ) >
+
+<!ELEMENT ParamVal ( #PCDATA ) >
+
+]
+>
+<Report ver="2.0" tmZone="India Standard Time">
+<General productName="QuickTest Professional" productVer="9.0" os="Windows 2003" host="PRITI-PC"><DocLocation><![CDATA[D:\framework\SystemLevel\bin\SuiteExecutor]]></DocLocation></General>
+<Doc rID="T1"   productName= "QuickTest Professional"  >
+<DName><![CDATA[SuiteExecutor]]></DName>
+<Res><![CDATA[Res1]]></Res>
+<DT rID="T2">
+<NodeArgs eType="Table" icon="2" nRep="5" filter="False" >
+<Disp><![CDATA[Run-Time Data Table]]></Disp>
+<BtmPane vType="Table">
+<Path><![CDATA[Default.xls]]></Path>
+</BtmPane>
+</NodeArgs>
+</DT>
+<DIter rID="T3" iterID="1" >
+<Action rID="T4">
+<AName><![CDATA[Action1]]></AName>
+<Step rID="T5" >
+<Obj plainTxt="False" ><![CDATA[Run Error]]></Obj>
+<Details plainTxt="False" ><![CDATA[SaveAs method of Workbook class failed<BR>Function file: D:\framework\common\lib\ReportManager.vbs<BR>Line (560): &quot;        newreportexcelobj.ActiveWorkbook.SaveAs filename&quot;.]]></Details>
+<Time><![CDATA[7/29/2014 - 10:54:34]]></Time>
+<NodeArgs eType="Replay" icon="5" nRep="9" status="Failed" >
+<Disp><![CDATA[Run Error]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T6" >
+<Obj ><![CDATA[START Suite: Comprehensive]]></Obj>
+<Details ><![CDATA[]]></Details>
+<Time><![CDATA[7/29/2014 - 10:54:45]]></Time>
+<NodeArgs eType="User" icon="6" nRep="10" >
+<Disp><![CDATA[START Suite: Comprehensive]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T7" >
+<Obj ><![CDATA[START Flow: Flight]]></Obj>
+<Details ><![CDATA[]]></Details>
+<Time><![CDATA[7/29/2014 - 10:54:47]]></Time>
+<NodeArgs eType="User" icon="6" nRep="11" >
+<Disp><![CDATA[START Flow: Flight]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T8" >
+<Obj ><![CDATA[START TestCase: FlightLogout]]></Obj>
+<Details ><![CDATA[]]></Details>
+<Time><![CDATA[7/29/2014 - 10:54:47]]></Time>
+<NodeArgs eType="User" icon="6" nRep="12" >
+<Disp><![CDATA[START TestCase: FlightLogout]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T9" >
+<Obj ><![CDATA[STEP: Flight.Reservation.internal_assign()]]></Obj>
+<Details ><![CDATA[]]></Details>
+<Time><![CDATA[7/29/2014 - 10:54:47]]></Time>
+<NodeArgs eType="User" icon="6" nRep="13" >
+<Disp><![CDATA[STEP: Flight.Reservation.internal_assign()]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T10" >
+<Obj ><![CDATA[STEP: Flight.Reservation.assertExists(True)]]></Obj>
+<Details ><![CDATA[]]></Details>
+<Time><![CDATA[7/29/2014 - 10:54:47]]></Time>
+<NodeArgs eType="User" icon="6" nRep="14" >
+<Disp><![CDATA[STEP: Flight.Reservation.assertExists(True)]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T11" >
+<Obj plainTxt="False" ><![CDATA[FlightReservation]]></Obj>
+<Details plainTxt="False" ><![CDATA[Window]]></Details>
+<Time><![CDATA[7/29/2014 - 10:54:47]]></Time>
+<Step rID="T12" >
+<Obj plainTxt="False" ><![CDATA[FlightReservation.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object exists"]]></Details>
+<Time><![CDATA[7/29/2014 - 10:54:47]]></Time>
+<NodeArgs eType="Replay" icon="7" nRep="16" >
+<Disp><![CDATA[FlightReservation.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<NodeArgs eType="Context" icon="7" nRep="15" >
+<Disp><![CDATA[FlightReservation]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T13" >
+<Obj ><![CDATA[assert Flight.Reservation.assertExists(True) equals]]></Obj>
+<Details ><![CDATA[value: True]]></Details>
+<Time><![CDATA[7/29/2014 - 10:54:47]]></Time>
+<NodeArgs eType="User" icon="6" nRep="17" status="Passed" >
+<Disp><![CDATA[assert Flight.Reservation.assertExists(True) equals]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T14" >
+<Obj ><![CDATA[STEP: Logout FlightApp]]></Obj>
+<Details ><![CDATA[]]></Details>
+<Time><![CDATA[7/29/2014 - 10:54:47]]></Time>
+<NodeArgs eType="User" icon="6" nRep="18" >
+<Disp><![CDATA[STEP: Logout FlightApp]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T15" >
+<Obj ><![CDATA[STEP: Flight.Reservation.internal_assign()]]></Obj>
+<Details ><![CDATA[]]></Details>
+<Time><![CDATA[7/29/2014 - 10:54:47]]></Time>
+<NodeArgs eType="User" icon="6" nRep="19" >
+<Disp><![CDATA[STEP: Flight.Reservation.internal_assign()]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T16" >
+<Obj ><![CDATA[STEP: Flight.Reservation.assertExists(False)]]></Obj>
+<Details ><![CDATA[]]></Details>
+<Time><![CDATA[7/29/2014 - 10:54:47]]></Time>
+<NodeArgs eType="User" icon="6" nRep="20" >
+<Disp><![CDATA[STEP: Flight.Reservation.assertExists(False)]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T17" >
+<Obj plainTxt="False" ><![CDATA[FlightReservation]]></Obj>
+<Details plainTxt="False" ><![CDATA[Window]]></Details>
+<Time><![CDATA[7/29/2014 - 10:54:50]]></Time>
+<Step rID="T18" >
+<Obj plainTxt="False" ><![CDATA[FlightReservation.Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[7/29/2014 - 10:54:50]]></Time>
+<NodeArgs eType="Replay" icon="7" nRep="23" >
+<Disp><![CDATA[FlightReservation.Exist]]></Disp>
+</NodeArgs>
+</Step>
+<NodeArgs eType="Context" icon="7" nRep="22" >
+<Disp><![CDATA[FlightReservation]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T19" >
+<Obj ><![CDATA[assert Flight.Reservation.assertExists(False) equals]]></Obj>
+<Details ><![CDATA[value: False]]></Details>
+<Time><![CDATA[7/29/2014 - 10:54:50]]></Time>
+<NodeArgs eType="User" icon="6" nRep="24" status="Passed" >
+<Disp><![CDATA[assert Flight.Reservation.assertExists(False) equals]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T20" >
+<Obj ><![CDATA[STOP TestCase: FlightLogout]]></Obj>
+<Details ><![CDATA[]]></Details>
+<Time><![CDATA[7/29/2014 - 10:54:51]]></Time>
+<NodeArgs eType="User" icon="6" nRep="25" >
+<Disp><![CDATA[STOP TestCase: FlightLogout]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T21" >
+<Obj ><![CDATA[STOP Flow: Flight]]></Obj>
+<Details ><![CDATA[]]></Details>
+<Time><![CDATA[7/29/2014 - 10:54:52]]></Time>
+<NodeArgs eType="User" icon="6" nRep="26" >
+<Disp><![CDATA[STOP Flow: Flight]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T22" >
+<Obj ><![CDATA[STOP Suite: Comprehensive]]></Obj>
+<Details ><![CDATA[]]></Details>
+<Time><![CDATA[7/29/2014 - 10:54:52]]></Time>
+<NodeArgs eType="User" icon="6" nRep="27" >
+<Disp><![CDATA[STOP Suite: Comprehensive]]></Disp>
+</NodeArgs>
+</Step>
+<Summary sTime="7/29/2014 - 10:54:28" eTime="7/29/2014 - 10:54:52" passed="2" failed="1" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="4" nRep="8" status="Failed" >
+<Disp><![CDATA[Action1 Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="7" status="Failed" >
+<Disp><![CDATA[SuiteExecutor Iteration 1 (Row 1)]]></Disp>
+</NodeArgs>
+</DIter>
+<Summary sTime="7/29/2014 - 10:54:26" eTime="7/29/2014 - 10:54:52" passed="2" failed="1" warnings="0" ></Summary>
+<NodeArgs eType="StartTest" icon="1" nRep="4" status="Failed" >
+<Disp><![CDATA[Test SuiteExecutor Summary]]></Disp>
+</NodeArgs>
+</Doc>
+</Report>
